@@ -189,17 +189,18 @@ class __ContentHeaderDesktopState extends State<_ContentHeaderDesktop> {
                   children: [
                     _PlayButton(),
                     const SizedBox(width: 16.0),
-                    FlatButton.icon(
+                    Padding(
                       padding:
                           const EdgeInsets.fromLTRB(25.0, 10.0, 30.0, 10.0),
-                      onPressed: () => print('More Info'),
-                      color: Colors.white,
-                      icon: const Icon(Icons.info_outline, size: 30.0),
-                      label: const Text(
-                        'More Info',
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w600,
+                      child: TextButton.icon(
+                        onPressed: () => print('More Info'),
+                        icon: const Icon(Icons.info_outline, size: 30.0),
+                        label: const Text(
+                          'More Info',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
@@ -232,18 +233,19 @@ class __ContentHeaderDesktopState extends State<_ContentHeaderDesktop> {
 class _PlayButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FlatButton.icon(
+    return Padding(
       padding: !Responsive.isDesktop(context)
           ? const EdgeInsets.fromLTRB(15.0, 5.0, 20.0, 5.0)
           : const EdgeInsets.fromLTRB(25.0, 10.0, 30.0, 10.0),
-      onPressed: () => print('Play'),
-      color: Colors.white,
-      icon: const Icon(Icons.play_arrow, size: 30.0),
-      label: const Text(
-        'Play',
-        style: TextStyle(
-          fontSize: 16.0,
-          fontWeight: FontWeight.w600,
+      child: TextButton.icon(
+        onPressed: () => print('Play'),
+        icon: const Icon(Icons.play_arrow, size: 30.0),
+        label: const Text(
+          'Play',
+          style: TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
     );
